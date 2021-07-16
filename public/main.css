@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300&display=swap");
 
 html,
 body {
@@ -8,7 +8,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  font-family: "Montserrat";
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 :root {
@@ -31,10 +31,44 @@ body {
   --box-shadow-red: rgba(202, 30, 30, 0.25);
 }
 
+* {
+  outline: none;
+}
+
+p {
+  margin: 2px 0 2px 0;
+}
+
+/* || scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
 input {
   font-size: 16px;
   width: 55%;
   padding: 6px 12px;
+}
+
+.blur {
+  color: rgb(51, 51, 51);
 }
 
 select {
@@ -165,22 +199,41 @@ button:active {
   width: 60%;
   padding: 20px, 30px;
   background: var(--main-bg-gradient);
+  border-radius: 0 0 30px 30px;
+}
+
+.index-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 0px;
+}
+
+.index-item {
+  transition: all 0.2s ease-in-out;
+  width: 20%;
+  padding: 25px;
+  border-radius: 6%;
+  border: var(--main-black-color) 3px solid;
+  box-shadow: 0 14px 28px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
 }
 
 .index-item:hover {
   transform: scale(1.1);
   border: var(--main-black-color) 4px solid;
+  margin: -4px;
   box-shadow: 0 14px 28px var(--main-bg-color);
 }
 
 .index {
   width: 60%;
-  padding: 20px, 30px;
+  padding: 30px, 30px;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
   background: var(--main-bg-gradient);
+  border-radius: 15px 15px 0 0;
 }
 
 .error {
@@ -206,12 +259,24 @@ button:active {
 
 .index h1 {
   color: var(--main-black-color);
+  font-size: 2.4rem;
   padding: 0;
   margin: 0;
 }
 
 .index h2 {
   color: var(--main-black-color);
+}
+
+.index-item a {
+  color: var(--main-black-color);
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
+.index-item i {
+  padding-top: 25px;
+  font-size: 6rem;
 }
 
 .padd {
@@ -222,40 +287,13 @@ button:active {
   padding: 35px;
 }
 
-.index-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 25px 0px;
-}
-
-.index-item {
-  width: 20%;
-  padding: 30px;
-  border-radius: 6%;
-  border: var(--main-black-color) 3px solid;
-  box-shadow: 0 14px 28px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
-}
-
 .black {
   color: var(--main-black-color);
 }
 
-.index-item h4 {
-  font-size: 1.3rem;
-}
-
-.index-item h4 a {
-  color: var(--main-black-color);
-  text-decoration: none;
-}
-
-.index-item i {
-  font-size: 5rem;
-}
-
 .profile {
   margin: auto;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,6 +303,7 @@ button:active {
 
 .form {
   margin-bottom: 25px;
+  padding: 1rem;
 }
 
 .users {
@@ -283,12 +322,39 @@ button:active {
 
 .user-profiles {
   height: 30%;
-  width: 20%;
+  width: 25%;
   border-radius: 6%;
+  font-size: 1.1rem;
   background-color: var(--main-user-bg);
   box-shadow: 0 14px 28px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
   border: var(--main-grey-color) 2px solid;
   text-align: center;
+}
+
+.username-input {
+  font-size: 1.4rem;
+  border-radius: 30px;
+  border: 0.5px solid;
+  padding: 0.5rem 1rem;
+}
+
+.profile-score {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.profile-button {
+  font-size: 1.4rem;
+  border-radius: 30px;
+  border: 0.5px solid;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.3rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-button:hover {
+  background-color: var(--main-white-color);
+  color: var(--main-bg-color-2);
 }
 
 .green {
@@ -308,11 +374,22 @@ button:active {
   padding: 0;
   height: 30%;
   width: 20%;
-  border-radius: 6%;
+  border-radius: 30px;
+  font-size: 1.2rem;
   background-color: var(--main-user-bg);
   box-shadow: 0 10px 20px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
   border: var(--main-grey-color) 2px solid;
   text-align: center;
+  animation: scaleProfile 0.5s;
+}
+
+@keyframes scaleProfile {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .user-profile-image {
@@ -324,23 +401,28 @@ button:active {
 }
 
 .user-profile-link {
-  font-size: 16px;
+  font-size: 1.2rem;
   padding: 6px 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-decoration: none;
   display: inline-block;
   color: var(--main-white-color);
-
-  border-radius: 5%;
+  border-radius: 30px;
   cursor: pointer;
   color: var(--main-white);
   background-color: var(--main-bg-color);
   box-shadow: 0 10px 20px var(--box-shadow-1), 0 4px 4px var(--box-shadow-2);
+  transition: transform 0.5s;
 }
 
 .user-profile-link:hover {
-  padding: 8px 16px;
+  transform: scale(1.1);
+}
+
+.user-profile-text {
+  text-align: left;
+  padding: 2% 24% 2% 24%;
 }
 
 .form-class {
@@ -354,11 +436,13 @@ button:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-bottom: 5%;
 }
 
 .top-item {
   padding: 25px;
   width: 60%;
+  border-radius: 15px 15px 30px 30px;
   background: var(--main-bg-gradient);
   margin-bottom: 50px;
   margin-top: 50px;
@@ -378,10 +462,16 @@ button:active {
   margin: 8px;
   padding: 8px;
   font-size: 1.3rem;
+  text-align: center;
   border-radius: 5%;
   background: var(--main-bg-gradient);
   border: var(--main-black-color) 2px solid;
   box-shadow: 0 14px 28px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
+  border-radius: 10px;
+}
+.top-item-url:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
 }
 
 .top-item-url a {
@@ -401,6 +491,12 @@ button:active {
 .top-item-image {
   box-shadow: 0 14px 28px var(--box-shadow-1), 0 10px 10px var(--box-shadow-2);
   background: var(--main-bg-color-2);
+  border-radius: 10px;
+}
+
+.top-item-image:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
 }
 
 .top-item-hero {
@@ -424,7 +520,18 @@ button:active {
 }
 
 .top-item-description {
-    word-break: break-word;
+  word-break: break-word;
+}
+
+.top-label {
+  font-size: 1.4rem;
+  margin: 0 2%;
+}
+
+.top-select {
+  border-radius: 30px;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
 }
 
 /* Media Query */
@@ -483,6 +590,10 @@ button:active {
     margin-bottom: 25px;
   }
 
+  .profile {
+    margin-bottom: 0px;
+  }
+
   .user-profile {
     width: 75%;
     margin: 30px;
@@ -516,6 +627,6 @@ button:active {
   }
 
   .top-item-url {
-    width: 30%;
+    width: 50%;
   }
 }
